@@ -1,6 +1,8 @@
 import 'package:codewithtea/src/constants/image_strings.dart';
 import 'package:codewithtea/src/constants/sizes.dart';
+import 'package:codewithtea/src/features/authentication/screens/signup/signup_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../../../constants/text_strings.dart';
 
@@ -32,14 +34,14 @@ class LoginFooterWidget extends StatelessWidget {
           height: tFormHeight - 20,
         ),
         TextButton(
-            onPressed: () {},
+            onPressed: () {
+              Get.offAll(() => SignUpScreen());
+            },
             child: Text.rich(TextSpan(
                 text: tAlreadyHaveAnAccount,
                 style: Theme.of(context).textTheme.bodyLarge,
                 children: [
-                  TextSpan(
-                      text: tSignup,
-                      style: TextStyle(color: Colors.blue))
+                  TextSpan(text: tSignup, style: TextStyle(color: Colors.blue))
                 ])))
       ],
     );

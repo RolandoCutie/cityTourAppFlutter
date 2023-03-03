@@ -6,6 +6,7 @@ import 'package:codewithtea/src/constants/image_strings.dart';
 import 'package:codewithtea/src/constants/sizes.dart';
 import 'package:codewithtea/src/constants/text_strings.dart';
 import 'package:codewithtea/src/features/authentication/screens/login/login_screen.dart';
+import 'package:codewithtea/src/features/authentication/screens/signup/signup_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -40,7 +41,6 @@ class WelcomeScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Hero(
-                  
                   tag: "heroImage",
                   child: Image(
                     image: AssetImage(tWelcomeScreenImage),
@@ -74,7 +74,10 @@ class WelcomeScreen extends StatelessWidget {
                     ),
                     Expanded(
                       child: ElevatedButton(
-                          onPressed: () {}, child: Text(tSignup.toUpperCase())),
+                          onPressed: () {
+                            Get.offAll(() => SignUpScreen());
+                          },
+                          child: Text(tSignup.toUpperCase())),
                     )
                   ],
                 )

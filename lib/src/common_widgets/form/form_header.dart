@@ -2,29 +2,34 @@ import 'package:codewithtea/src/constants/image_strings.dart';
 import 'package:codewithtea/src/constants/text_strings.dart';
 import 'package:flutter/material.dart';
 
-class LoginHeader extends StatelessWidget {
-  const LoginHeader({
+//TODO:ESTO ES UN WIDGET QUE LO VAMOS A USAR EN DIFERENTES VISTAS
+class FormHeader extends StatelessWidget {
+  const FormHeader({
     super.key,
-    required this.size,
+    required this.image,
+    required this.title,
+    required this.subTitle,
   });
 
-  final Size size;
+  final String image, title, subTitle;
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+
     return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
       Hero(
           tag: "heroImage",
           child: Image(
-            image: AssetImage(tWelcomeScreenImage),
+            image: AssetImage(image),
             height: size.height * 0.2,
           )),
       Text(
-        tLoginTitle,
+        title,
         style: Theme.of(context).textTheme.titleLarge,
       ),
       Text(
-        tLoginSubTitle,
+        subTitle,
         style: Theme.of(context).textTheme.bodyMedium,
       ),
     ]);

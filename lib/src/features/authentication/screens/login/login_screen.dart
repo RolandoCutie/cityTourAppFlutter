@@ -1,7 +1,10 @@
+import 'package:codewithtea/src/common_widgets/form/form_header.dart';
+import 'package:codewithtea/src/constants/image_strings.dart';
 import 'package:codewithtea/src/constants/sizes.dart';
+import 'package:codewithtea/src/constants/text_strings.dart';
 import 'package:codewithtea/src/features/authentication/screens/login/login_footer.dart';
 import 'package:codewithtea/src/features/authentication/screens/login/login_form.dart';
-import 'package:codewithtea/src/features/authentication/screens/login/login_header.dart';
+
 
 import 'package:flutter/material.dart';
 
@@ -19,7 +22,7 @@ class LoginScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              LoginHeader(size: size),
+              FormHeader(image: tWelcomeScreenImage, title: tSignup, subTitle: tSignUpSubTitle),
               LoginForm(),
               LoginFooterWidget(),
             ],
